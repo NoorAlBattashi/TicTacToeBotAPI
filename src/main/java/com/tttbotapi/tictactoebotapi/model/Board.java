@@ -8,7 +8,13 @@ public class Board {
     public ArrayList<ArrayList<String>> getBoard() {
         return this.ticTacToe;
     }
+    /**
 
+     Sets the Tic Tac Toe board with the specified ArrayList of ArrayList of Strings.
+     Each inner ArrayList represents a row in the board.
+     @param board An ArrayList of ArrayList of Strings representing the Tic Tac Toe board.
+     @throws Exception If an error occurs while setting the board.
+     */
     public void setBoard(ArrayList<ArrayList<String>> board) {
         try {
             this.ticTacToe = board;
@@ -16,9 +22,20 @@ public class Board {
             System.out.println("Error occurred while setting the board: " + e.getMessage());
         }
     }
+    /**
 
+     Determines the current status of the tic-tac-toe game.
 
-    public String checkWinner(ArrayList<ArrayList<String>> board) {
+     @param board represented as a 2D array of strings.
+
+     @return A string indicating the current status of the game. If the game is won, returns a string indicating
+
+     which player won. If the game is a draw, returns "Draw". If the game is not yet finished, returns null.
+
+     @throws IllegalArgumentException if the board is null or not a valid 3x3 tic-tac-toe board.
+     */
+
+    public String gameStatus(ArrayList<ArrayList<String>> board) {
         if (board == null) {
             throw new IllegalArgumentException("Board cannot be null");
         }
@@ -73,7 +90,18 @@ public class Board {
         // If no winner and no draw, return null
         return null;
     }
+    /**
 
+     Checks whether the specified position on the board is available or not.
+
+     @param board The board to check.
+
+     @param row The row of the position to check.
+
+     @param col The column of the position to check.
+
+     @return True if the position is available, false otherwise.
+     */
     public static boolean isPositionAvailable(Board board, int row, int col) {
         try {
             // check if position is already taken
