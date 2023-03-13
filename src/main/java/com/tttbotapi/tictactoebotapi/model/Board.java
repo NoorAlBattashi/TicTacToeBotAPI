@@ -104,7 +104,6 @@ public class Board {
             if (board.getBoard().get(row).get(col).equals("X") || board.getBoard().get(row).get(col).equals("O")) {
                 return false;
             }
-
             // position is available
             return true;
         } catch (IndexOutOfBoundsException e) {
